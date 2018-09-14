@@ -9,3 +9,10 @@ services:
       - ./docker/logs:/opt/teamcity/logs
     ports:
       - 80:8111
+
+  teamcity-agent:
+    image: jetbrains/teamcity-agent:2018.1.2
+    volumes:
+      - ./docker/teamcity_agent:/data/teamcity_agent/conf
+    environment:
+      SERVER_URL: $SERVER_URL
