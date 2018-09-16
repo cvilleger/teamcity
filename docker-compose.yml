@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
 
-  teamcity:
+  teamcity-server:
     image: jetbrains/teamcity-server:2018.1.2
     volumes:
       - ./docker/datadir:/data/teamcity_server/datadir
@@ -12,7 +12,5 @@ services:
 
   teamcity-agent:
     image: jetbrains/teamcity-agent:2018.1.2
-    volumes:
-      - ./docker/teamcity_agent:/data/teamcity_agent/conf
     environment:
-      SERVER_URL: $SERVER_URL
+      SERVER_URL: http://teamcity-server
