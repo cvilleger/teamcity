@@ -13,4 +13,4 @@ services:
   teamcity-agent:
     image: jetbrains/teamcity-agent:2018.1.2
     environment:
-      SERVER_URL: http://teamcity-server
+      SERVER_URL: http://teamcity-server:8011
